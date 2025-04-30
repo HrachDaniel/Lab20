@@ -1,3 +1,4 @@
+
 const display = document.querySelector('.display');
 const buttons = document.querySelector('.buttons');
 
@@ -84,8 +85,8 @@ buttons.addEventListener('click', event => {
         handleNumber(target.dataset.number);
     }
 
-    if (target.dataset.action === 'add'  target.dataset.action === 'subtract'  target.dataset.action === 'multiply'  target.dataset.action === 'divide'  target.dataset.action === 'percent') {
-        handleOperator(target.dataset.action === 'multiply' ? '×' : target.dataset.action);
+    if (target.dataset.action === 'add') ;  (target.dataset.action === 'subtract') ; (target.dataset.action === 'multiply') ; (target.dataset.action === 'divide') ; (target.dataset.action === 'percent') 
+        { handleOperator(target.dataset.action === 'multiply' ? '×' : target.dataset.action);
     }
 
     if (target.dataset.action === 'clear') {
