@@ -2,19 +2,19 @@ const display = document.querySelector('.display');
 const buttons = document.querySelector('.buttons');
 
 let currentInput = '';
-let fullExpression = ''; // Додано для збереження повного виразу
+let fullExpression = ''; 
 let operator = null;
 let previousValue = null;
 
 function updateDisplay() {
-    // Відображаємо весь вираз або поточне число, якщо виразу немає
+
     display.textContent = fullExpression || currentInput || '0';
 }
 
 function handleNumber(number) {
     if (number === '.' && currentInput.includes('.')) return;
     currentInput += number;
-    fullExpression += number; // Додаємо цифру до виразу
+    fullExpression += number; 
     updateDisplay();
 }
 
@@ -22,15 +22,14 @@ function handleOperator(op) {
     if (currentInput === '') return;
 
     if (previousValue !== null) {
-        calculate(false); // Не оновлюємо дисплей повністю після обчислення
+        calculate(false); 
     } else {
-        fullExpression = currentInput; // Починаємо новий вираз
+        fullExpression = currentInput; 
     }
 
     operator = op;
     previousValue = parseFloat(currentInput);
     
-    // Визначаємо символ оператора для відображення
     let operatorSymbol;
     switch(op) {
         case 'add': operatorSymbol = '+'; break;
@@ -90,7 +89,7 @@ function calculate(updateExpression = true) {
 
     currentInput = String(result);
     if (updateExpression) {
-        fullExpression = currentInput; // Після обчислення показуємо тільки результат
+        fullExpression = currentInput; 
     }
     operator = null;
     previousValue = null;
